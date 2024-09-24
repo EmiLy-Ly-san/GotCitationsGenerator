@@ -6,21 +6,21 @@
 
 body {
   background: linear-gradient(to right, #fee5e1, #ffffff);
-  height: 100vh;
-  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .box {
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   width: 40%;
-  height: 25%;
+  height: 80%;
 }
 
 .boxCitation {
@@ -29,22 +29,19 @@ body {
   gap: 2rem;
   align-items: center;
   background: white;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 1rem;
   border-radius: 30px;
   box-shadow: 16px 16px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 #citation {
-  font-size: 2em;
+  font-size: 1.5rem;
   font-family: sans-serif;
-  line-height: 1.3em;
   letter-spacing: 1px;
   text-align: center;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   color: #261e1d;
+  width: 50%;
 }
 
 #citation:before {
@@ -62,11 +59,16 @@ body {
 }
 
 #author {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-style: italic;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: #423730;
+}
+
+#pictureChar {
+  width: 30%;
+  height: 30%;
 }
 
 #buttonGenerator {
@@ -79,7 +81,7 @@ body {
   font-family: sans-serif;
   font-weight: 600;
   color: #261e1d;
-  width: 100%;
+  width: 40%;
   box-shadow: inset 0px 0px 0 3px #fdeef5, inset 0px 0px 0 4px #ffb8d0;
   border: solid 1px #ffb8d0;
 }
