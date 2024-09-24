@@ -5,6 +5,7 @@
 }
 
 body {
+  width: 100%;
   background: linear-gradient(to right, #fee5e1, #ffffff);
   display: flex;
   flex-direction: column;
@@ -31,25 +32,43 @@ body {
   background: white;
   padding: 1rem;
   border-radius: 30px;
+  width: 100%;
+  height: 100%;
   box-shadow: 16px 16px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 #citation {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-family: sans-serif;
   letter-spacing: 1px;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-top: 1rem;
   color: #261e1d;
   width: 50%;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 #citation:before {
+  position: absolute;
   content: open-quote;
+  top: 1rem;
+  left: -2rem;
+  font-size: 2rem;
 }
 
 #citation:after {
   content: close-quote;
+  position: absolute;
+  top: auto;
+  bottom: 1rem;
+  right: -2rem;
+  font-size: 2rem;
 }
 
 .lineDecoration {
@@ -61,14 +80,16 @@ body {
 #author {
   font-size: 1.5rem;
   font-style: italic;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   color: #423730;
 }
 
 #pictureChar {
-  width: 30%;
-  height: 30%;
+  display: block;
+  height: 225px;
+  width: auto;
+  border-radius: 10px;
 }
 
 #buttonGenerator {
