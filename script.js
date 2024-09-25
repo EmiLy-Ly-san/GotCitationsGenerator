@@ -135,9 +135,9 @@ axios
       .map((char) => {
         //on retraite le tableau filtre en le mapant pour retourner un nouveau array avec perso + citation de mon tableau
 
-        const character = myCharactersQuotes.find((mycharacterArray) => {
+        const character = myCharactersQuotes.find((myCharacter) => {
           //je cherche dans mon array le personnage dont le nom est le meme que le perso courrant de la boucle map
-          return mycharacterArray.name === char.fullName;
+          return myCharacter.name === char.fullName;
         });
 
         if (character) {
@@ -155,11 +155,11 @@ axios
     let buttonGenerator = document.querySelector("#buttonGenerator");
     let citationDisplay = document.querySelector("#citation");
     let authorDisplay = document.querySelector("#author");
-    let pictureDisplay = document.querySelector("#pictureChar");
+    let pictureContainer = document.querySelector("#pictureContainer");
     let lastCitation = 0;
     let randomIndex;
 
-    const onclick = function () {
+    const changeCitation = function () {
       do {
         randomIndex = indexGenerator(myDataApiCharactersQuotesArray.length);
       } while (randomIndex === lastCitation);
@@ -170,9 +170,16 @@ axios
         myDataApiCharactersQuotesArray[randomIndex].citation || "Bonjour"; //si citation undefined => Bonjour;
       authorDisplay.textContent =
         myDataApiCharactersQuotesArray[randomIndex].fullName;
-      pictureDisplay.src = myDataApiCharactersQuotesArray[randomIndex].imageUrl;
+      // pictureDisplay.src = myDataApiCharactersQuotesArray[randomIndex].imageUrl;
+      let pictureDisplay = document.querySelector("#pictureChar");
+      pictureDisplay.remove();
+      const newPicture = document.createElement("img");
+      newPicture.id = "pictureChar";
+      newPicture.setAttribute("loading", "lazy");
+      newPicture.src = myDataApiCharactersQuotesArray[randomIndex].imageUrl;
+      pictureContainer.append(newPicture);
       lastCitation = randomIndex;
     };
 
-    buttonGenerator.addEventListener("click", onclick);
+    buttonGenerator.addEventListener("click", changeCitation);
   });
