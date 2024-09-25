@@ -172,8 +172,6 @@ axios
         myDataApiCharactersQuotesArray[randomIndex].fullName;
       pictureDisplay.src = myDataApiCharactersQuotesArray[randomIndex].imageUrl;
       lastCitation = randomIndex;
-      
-      pictureDisplay.classList.add("fadeIn");
     };
 
     buttonGenerator.addEventListener("click", onclick);
